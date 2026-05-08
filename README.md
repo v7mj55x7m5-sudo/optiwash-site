@@ -11,8 +11,8 @@ Renomme les photos exactement comme ceci :
 - `hero-optiwash.jpg`
 - `avant-208-face.jpg`
 - `apres-208-face.jpg`
-- `interieur-opel-propre.jpg`
 - `interieur-opel-detail.jpg`
+-  `interieur-opel-propre.jpg`
 - `interieur-seat-avant.jpg`
 - `interieur-seat-apres.jpg`
 
