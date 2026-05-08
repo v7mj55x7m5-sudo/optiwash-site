@@ -1,256 +1,243 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>O P'TI WASH — Lavage auto premium</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#05070b;
-  --bg2:#080b11;
-  --card:#11151d;
-  --card2:#151a23;
-  --line:#2a303a;
-  --text:#ffffff;
-  --muted:#b5bdc9;
-  --red:#ff2f2f;
-  --red2:#d90f0f;
-  --green:#25d366;
-  --shadow:0 24px 80px rgba(0,0,0,.55);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1120px,92vw);margin:auto}
-.red{color:var(--red)}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O’PTI WASH – Lavage intérieur & extérieur</title>
+  <meta name="description" content="O’PTI WASH à Petit-Bourg : lavage intérieur et extérieur, shampooing sièges, formule complète et options auto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#03070d;
+      --bg2:#07111d;
+      --card:#111821;
+      --card2:#0c1219;
+      --line:#2b3440;
+      --white:#ffffff;
+      --muted:#c7d0dd;
+      --red:#ff3030;
+      --red2:#e01919;
+      --blue:#0f66c9;
+      --shadow:0 22px 70px rgba(0,0,0,.55);
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Montserrat,Arial,sans-serif;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 50% 0%,rgba(0,98,190,.14),transparent 30%),
+        linear-gradient(180deg,#02050a 0%,#050911 55%,#02050a 100%);
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .accent{color:var(--red)}
 
-/* HEADER */
-.header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(5,7,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.04em}
-.logo-mark{width:88px;height:50px;position:relative;display:grid;place-items:center;font-size:.72rem;font-weight:900;text-transform:uppercase}
-.logo-mark:before,.logo-mark:after{content:"";position:absolute;border-radius:50%;width:78px;height:35px;border:5px solid transparent;transform:rotate(-10deg)}
-.logo-mark:before{border-top-color:var(--red);top:2px}
-.logo-mark:after{border-bottom-color:#fff;bottom:2px}
-.logo-mark span{position:relative;z-index:2;text-shadow:0 2px 8px #000}
-.menu{display:flex;align-items:center;gap:34px;font-size:.92rem;font-weight:800;color:#e8edf6}
-.menu a{transition:.2s}
-.menu a:hover,.menu a.active{color:var(--red)}
-.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--red);color:#fff;padding:14px 22px;border-radius:14px;font-weight:900;box-shadow:0 14px 35px rgba(255,47,47,.28);border:0;cursor:pointer;transition:.2s}
-.btn-wa:hover{transform:translateY(-2px);background:#ff4040}
-.mobile-toggle{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:10px;padding:9px 11px;font-size:1.2rem}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(2,6,12,.82);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.02em}
+    .brand-logo{
+      width:136px;height:auto;object-fit:contain;
+      filter:drop-shadow(0 0 12px rgba(0,102,201,.28));
+    }
+    .menu{display:flex;align-items:center;gap:34px;font-weight:800;font-size:.92rem}
+    .menu a{opacity:.9;transition:.2s}.menu a:hover,.menu a.active{color:var(--red);opacity:1}
+    .whatsapp{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      background:var(--red);border-radius:16px;padding:15px 24px;
+      color:#fff;font-weight:900;box-shadow:0 14px 35px rgba(255,48,48,.35);
+      border:0;cursor:pointer;transition:.2s;white-space:nowrap;
+    }
+    .whatsapp:hover{transform:translateY(-2px);background:#ff4242}
+    .burger{display:none;background:none;border:0;color:white;font-size:28px}
 
-/* HERO */
-.hero{position:relative;min-height:690px;padding:132px 0 76px;background:linear-gradient(90deg,rgba(5,7,11,.96) 0%,rgba(5,7,11,.75) 42%,rgba(5,7,11,.34) 100%),url('images/hero-optiwash.jpg.jpeg') center/cover no-repeat;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(0deg,var(--bg),transparent)}
-.hero .container{position:relative;z-index:2}
-.hero-content{max-width:560px}
-h1{font-size:clamp(2.5rem,6vw,5.4rem);line-height:.94;font-weight:900;letter-spacing:-.06em;margin-bottom:22px}
-.hero p{font-size:1.26rem;line-height:1.45;color:#e3e7ee;margin-bottom:28px;max-width:520px}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0 32px;max-width:550px}
-.feature{font-size:.86rem;font-weight:800;color:#fff}
-.feature .ico{width:38px;height:38px;border:1.8px solid var(--red);border-radius:12px;display:grid;place-items:center;color:var(--red);font-size:1.15rem;margin-bottom:8px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border:1px solid rgba(255,255,255,.45);border-radius:14px;font-weight:900;color:#fff;background:rgba(255,255,255,.03)}
+    .hero{
+      min-height:620px;
+      display:flex;align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:#02050a;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(2,5,10,.98) 0%,rgba(2,5,10,.85) 34%,rgba(2,5,10,.25) 62%,rgba(2,5,10,.55) 100%),
+        url('images/hero-optiwash.jpg.jpeg') center right/cover no-repeat;
+      opacity:.96;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto 0 0 0;height:130px;
+      background:linear-gradient(180deg,transparent,var(--bg));
+    }
+    .hero-content{position:relative;z-index:2;padding:78px 0 94px;max-width:610px}
+    .hero-logo{width:min(470px,90vw);margin:0 0 18px;filter:drop-shadow(0 18px 45px rgba(0,0,0,.55))}
+    h1{font-size:clamp(2.45rem,5.2vw,5.2rem);line-height:.95;margin:0 0 20px;font-weight:900;letter-spacing:-.06em}
+    .lead{font-size:clamp(1rem,1.8vw,1.25rem);line-height:1.55;color:#e9eef5;max-width:560px;margin:0 0 28px}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:26px 0 28px;max-width:560px}
+    .feature{display:grid;gap:8px;justify-items:center;text-align:center;font-size:.78rem;font-weight:900;line-height:1.25;text-transform:uppercase;color:#f2f7ff}
+    .feature .ico{width:42px;height:42px;border:2px solid rgba(80,170,255,.85);border-radius:14px;display:grid;place-items:center;color:#66b9ff;font-size:22px;background:rgba(8,38,72,.35)}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-dark{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border:1px solid rgba(255,255,255,.4);border-radius:14px;font-weight:900;background:rgba(5,9,15,.45)}
 
-/* SECTIONS */
-section{padding:64px 0}
-.section-title{text-align:center;font-size:2.25rem;line-height:1.1;font-weight:900;letter-spacing:-.05em;margin-bottom:8px}
-.section-sub{text-align:center;color:#cbd3df;font-size:1rem;margin-bottom:32px}
+    section{padding:54px 0}.section-title{text-align:center;font-size:clamp(2rem,3vw,2.8rem);line-height:1.05;font-weight:900;margin:0}.section-sub{text-align:center;color:var(--muted);margin:10px 0 28px}
 
-/* BEFORE AFTER */
-.ba-wrap{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0d0d0d;box-shadow:var(--shadow);height:430px;display:grid;grid-template-columns:1fr 1fr}
-.ba-img{position:relative;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center}
-.ba-img img{width:100%;height:100%;object-fit:cover;object-position:center}
-.ba-img.before img{filter:brightness(.86)}
-.ba-img.after img{filter:brightness(1.02)}
-.ba-img:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.08)}
-.tag{position:absolute;bottom:16px;left:16px;z-index:2;background:rgba(0,0,0,.72);padding:9px 14px;border-radius:9px;font-weight:900}
-.tag.after{left:auto;right:16px;background:var(--red)}
-.divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:3}
-.handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:#fff;color:#111;z-index:4;display:grid;place-items:center;font-weight:900;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .ba-box{max-width:1050px;margin:0 auto;border:1px solid rgba(255,255,255,.16);border-radius:14px;overflow:hidden;height:360px;display:grid;grid-template-columns:1fr 1fr;position:relative;background:#111;box-shadow:var(--shadow)}
+    .ba-img{height:100%;width:100%;object-fit:cover;object-position:center}.ba-img.before{filter:brightness(.78)}.ba-img.after{filter:brightness(.98)}
+    .divider{position:absolute;left:50%;top:0;bottom:0;width:3px;background:#fff;z-index:3}.handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;background:white;color:#111;border-radius:50%;display:grid;place-items:center;z-index:4;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+    .tag{position:absolute;bottom:16px;padding:9px 14px;border-radius:10px;background:rgba(0,0,0,.75);font-weight:900}.tag.left{left:16px}.tag.right{right:16px;background:var(--red)}
 
-/* PRICING */
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
-.card{background:linear-gradient(180deg,var(--card2),#0d1016);border:1px solid var(--line);border-radius:16px;padding:28px 26px;min-height:320px;position:relative;box-shadow:0 18px 50px rgba(0,0,0,.28)}
-.card.featured{border-color:var(--red);box-shadow:0 0 0 1px rgba(255,47,47,.2),0 24px 70px rgba(255,47,47,.10)}
-.badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;border-radius:999px;padding:8px 17px;font-size:.76rem;font-weight:900;white-space:nowrap}
-.card .icon{font-size:1.65rem;color:var(--red);margin-bottom:22px}
-.card h3{font-size:1.23rem;margin-bottom:14px;font-weight:900}
-.card ul{list-style:none;display:grid;gap:10px;margin:20px 0 26px;color:#e9eef6;font-size:.95rem}
-.card li:before{content:"✓";color:var(--red);font-weight:900;margin-right:8px}
-.price-row{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:auto}
-.price{font-weight:900;font-size:1.1rem}.price small{display:block;color:#cbd3df;font-size:.83rem;font-weight:600;margin-bottom:2px}
-.btn-reserver{background:var(--red);color:#fff;border:0;border-radius:11px;padding:12px 18px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;transition:.2s;white-space:nowrap}
-.btn-reserver:hover{background:#ff4747;transform:translateY(-2px)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}.card{position:relative;background:linear-gradient(180deg,rgba(20,28,38,.95),rgba(11,16,23,.96));border:1px solid var(--line);border-radius:16px;padding:30px;min-height:280px;box-shadow:0 20px 55px rgba(0,0,0,.22)}.card.hot{border-color:var(--red);box-shadow:0 20px 55px rgba(255,48,48,.15)}.badge{position:absolute;top:-17px;left:50%;transform:translateX(-50%);background:var(--red);border-radius:999px;padding:9px 20px;font-size:.8rem;font-weight:900}.card .icon{font-size:28px;color:var(--red);margin-bottom:20px}.card h3{font-size:1.45rem;margin:0 0 20px;font-weight:900}.card ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:11px}.card li::before{content:'✓';color:var(--red);font-weight:900;margin-right:9px}.price{display:flex;align-items:end;justify-content:space-between;gap:12px}.amount{font-size:1rem;font-weight:900}.amount strong{font-size:1.75rem}.reserve{background:var(--red);border:0;border-radius:12px;color:#fff;font-weight:900;padding:13px 20px;cursor:pointer}.reserve:hover{background:#ff4545}
+    .wide{grid-column:span 2}.options{grid-column:span 1}
 
-/* REALISATIONS */
-.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
-.gallery a{height:145px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#111;display:block;position:relative}
-.gallery img{width:100%;height:100%;object-fit:cover;object-position:center}
-.gallery a:hover img{transform:scale(1.04)}
-.gallery img{transition:.25s}
-.instagram-btn{margin:22px auto 0;display:flex;width:max-content;border:1px solid var(--red);color:#fff;border-radius:12px;padding:13px 22px;font-weight:900;background:rgba(255,47,47,.05)}
+    .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}.gallery a{height:142px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#111}.gallery img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.25s}.gallery a:hover img{transform:scale(1.05)}
+    .insta-btn{display:flex;justify-content:center;margin-top:24px}.outline-red{border:1px solid var(--red);border-radius:14px;padding:14px 28px;color:#fff;font-weight:900;background:transparent}
 
-/* REVIEWS */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
-.review{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:24px;color:#f3f6fb}.stars{color:#ffd84d;letter-spacing:2px;margin-bottom:12px}.review p{color:#d9dfea;line-height:1.55}.review b{display:block;margin-top:16px}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}.review{background:linear-gradient(180deg,rgba(20,28,38,.95),rgba(11,16,23,.96));border:1px solid var(--line);border-radius:16px;padding:24px}.stars{color:#ffd23f;font-size:1.2rem;letter-spacing:2px}.review p{color:#edf3fb;line-height:1.55}.review strong{display:block;margin-top:10px}
 
-/* CONTACT */
-.contact-box{background:linear-gradient(180deg,var(--card2),#0d1016);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:18px;align-items:center;margin-top:30px}
-.contact-item{display:flex;align-items:center;gap:14px;color:#fff;font-weight:800}.contact-item span{color:#cbd3df;display:block;font-size:.86rem;font-weight:600}.contact-icon{font-size:1.5rem;color:var(--red)}
-footer{padding:28px 0;color:#87909e;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+    footer{padding:34px 0 22px;border-top:1px solid rgba(255,255,255,.08)}.foot{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;background:rgba(255,255,255,.035)}.foot-logo{width:145px}.foot-item{display:flex;gap:12px;align-items:center}.foot-ico{color:var(--red);font-size:26px}.foot small{color:var(--muted)}.copy{text-align:center;color:#94a0ae;font-size:.82rem;margin-top:22px}
 
-@media(max-width:900px){
-  .mobile-toggle{display:block}.menu{position:fixed;top:76px;left:0;right:0;background:#070a10;border-bottom:1px solid var(--line);padding:20px;display:none;flex-direction:column;gap:18px}.menu.open{display:flex}.nav .btn-wa{display:none}
-  .hero{min-height:auto;padding:120px 0 58px}.features{grid-template-columns:repeat(2,1fr)}
-  .pricing{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.reviews{grid-template-columns:1fr}.contact-box{grid-template-columns:1fr}.ba-wrap{height:auto;grid-template-columns:1fr}.ba-img{min-height:330px}.divider,.handle{display:none}
-}
-@media(max-width:520px){
-  .hero{background-position:center}.hero p{font-size:1.05rem}.features{grid-template-columns:1fr 1fr;gap:12px}.feature{font-size:.78rem}.feature .ico{width:34px;height:34px}.hero-actions a{width:100%}.section-title{font-size:1.9rem}.ba-img{min-height:280px}.gallery a{height:170px}.pricing{gap:18px}.card{padding:24px 20px}.logo-mark{width:76px}.nav{height:68px}.menu{top:68px}
-}
-</style>
+    @media(max-width:900px){
+      .nav{height:70px}.brand-logo{width:110px}.menu{display:none}.burger{display:block}.whatsapp.top{padding:12px 16px;font-size:.85rem}.hero{min-height:auto}.hero::before{background:linear-gradient(90deg,rgba(2,5,10,.96),rgba(2,5,10,.76)),url('images/hero-optiwash.jpg.jpeg') center/cover no-repeat}.hero-content{padding:46px 0 68px}.hero-logo{width:300px}.features{grid-template-columns:repeat(2,1fr);max-width:380px}.ba-box{height:auto;grid-template-columns:1fr}.ba-img{height:auto;aspect-ratio:4/3}.divider,.handle{display:none}.tag.right{right:16px;bottom:calc(50% + 16px)}.cards{grid-template-columns:1fr}.wide,.options{grid-column:auto}.gallery{grid-template-columns:repeat(2,1fr)}.gallery a{height:170px}.reviews{grid-template-columns:1fr}.foot{grid-template-columns:1fr;text-align:left}.section-title{font-size:2rem}
+    }
+    @media(max-width:520px){.container{width:min(100% - 24px,var(--max))}.whatsapp.top{font-size:0;gap:0}.whatsapp.top::after{content:'WhatsApp';font-size:.85rem}.gallery a{height:140px}.card{padding:24px}.price{align-items:flex-start;flex-direction:column}.reserve{width:100%}}
+  </style>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="logo" href="#accueil" aria-label="Accueil O P'TI WASH"><span class="logo-mark"><span>O P'TI WASH</span></span></a>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">☰</button>
-    <nav class="menu" id="menu">
-      <a href="#accueil" class="active">Accueil</a>
-      <a href="#prestations">Prestations</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn-wa" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20un%20lavage%20auto.">☎ WhatsApp</a>
-  </div>
-</header>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil O’PTI WASH"><img class="brand-logo" src="images/logo-optiwash.png" alt="Logo O’PTI WASH"></a>
+      <nav class="menu" aria-label="Navigation principale">
+        <a class="active" href="#accueil">Accueil</a><a href="#prestations">Prestations</a><a href="#tarifs">Tarifs</a><a href="#realisations">Réalisations</a><a href="#avis">Avis</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="whatsapp top" href="https://wa.me/590690267233?text=Bonjour%20O%27PTI%20WASH%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20un%20lavage%20auto." target="_blank" rel="noopener">☎ WhatsApp</a>
+    </div>
+  </header>
 
-<main>
-  <section class="hero" id="accueil">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Lavage auto<br><span class="red">premium</span> à domicile</h1>
-        <p>Redonnez éclat et propreté à votre voiture intérieure comme extérieure.</p>
+  <main id="accueil">
+    <section class="hero">
+      <div class="container hero-content">
+        <img class="hero-logo" src="images/logo-optiwash.png" alt="O’PTI WASH - Lavage intérieur & extérieur">
+        <h1>Lavage auto <span class="accent">premium</span></h1>
+        <p class="lead">Redonnez éclat et propreté à votre voiture, intérieure comme extérieure.</p>
         <div class="features">
-          <div class="feature"><div class="ico">🚗</div>Déplacement<br>à domicile</div>
-          <div class="feature"><div class="ico">🧴</div>Produits<br>professionnels</div>
-          <div class="feature"><div class="ico">⭐</div>Résultat<br>impeccable</div>
-          <div class="feature"><div class="ico">🛡️</div>Travail<br>soigné</div>
+          <div class="feature"><span class="ico">💧</span><span>Produits<br>haute qualité</span></div>
+          <div class="feature"><span class="ico">🛡</span><span>Protection<br>longue durée</span></div>
+          <div class="feature"><span class="ico">⏱</span><span>Intérieur<br>soigné</span></div>
+          <div class="feature"><span class="ico">👍</span><span>Résultat<br>impeccable</span></div>
         </div>
         <div class="hero-actions">
-          <a class="btn-wa" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20un%20lavage%20auto.">☎ Réserver sur WhatsApp</a>
-          <a class="btn-secondary" href="#tarifs">Voir les tarifs ↓</a>
+          <a class="whatsapp" href="https://wa.me/590690267233?text=Bonjour%20O%27PTI%20WASH%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20un%20lavage%20auto." target="_blank" rel="noopener">☎ Prendre rendez-vous sur WhatsApp<br>+590 690 26 72 33</a>
+          <a class="btn-dark" href="#tarifs">Voir les tarifs</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="avant-apres">
-    <div class="container">
-      <h2 class="section-title">Avant / <span class="red">Après</span></h2>
-      <p class="section-sub">Des résultats qui parlent d’eux-mêmes.</p>
-      <div class="ba-wrap">
-        <div class="ba-img before"><img src="images/avant-208-face.jpg.jpeg" alt="Avant nettoyage voiture"></div>
-        <div class="ba-img after"><img src="images/apres-208-face.jpg.jpeg" alt="Après nettoyage voiture"></div>
-        <span class="tag">Avant</span><span class="tag after">Après</span><div class="divider"></div><div class="handle">‹ ›</div>
+    <section id="tarifs">
+      <div class="container">
+        <h2 class="section-title">Avant / <span class="accent">Après</span></h2>
+        <p class="section-sub">Des résultats qui parlent d’eux-mêmes.</p>
+        <div class="ba-box" aria-label="Comparaison avant après">
+          <img class="ba-img before" src="images/avant-208-face.jpg.jpeg" alt="Voiture avant nettoyage">
+          <img class="ba-img after" src="images/apres-208-face.jpg.jpeg" alt="Voiture après nettoyage">
+          <div class="divider"></div><div class="handle">‹ ›</div>
+          <span class="tag left">Avant</span><span class="tag right">Après</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="prestations">
-    <div class="container">
-      <h2 class="section-title">Nos <span class="red">prestations</span></h2>
-      <p class="section-sub">Des formules adaptées à vos besoins.</p>
-      <div class="pricing" id="tarifs">
-        <article class="card">
-          <div class="icon">▣</div>
-          <h3>Citadine simple</h3>
-          <ul><li>Intérieur + extérieur</li><li>Aspiration</li><li>Nettoyage plastiques</li><li>Vitres</li></ul>
-          <div class="price-row"><div class="price"><small>à partir de</small>50€</div><a class="btn-reserver" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20r%C3%A9server%20la%20formule%20Citadine%20simple%20%C3%A0%2050%E2%82%AC%20%3A%20lavage%20int%C3%A9rieur%20et%20ext%C3%A9rieur.">Réserver</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">🚙</div>
-          <h3>SUV / 4x4 simple</h3>
-          <ul><li>Intérieur + extérieur</li><li>Aspiration complète</li><li>Nettoyage plastiques</li><li>Vitres</li></ul>
-          <div class="price-row"><div class="price"><small>à partir de</small>60€</div><a class="btn-reserver" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20r%C3%A9server%20la%20formule%20SUV%20%2F%204x4%20simple%20%C3%A0%2060%E2%82%AC%20%3A%20lavage%20int%C3%A9rieur%20et%20ext%C3%A9rieur.">Réserver</a></div>
-        </article>
-        <article class="card featured">
-          <div class="badge">Le plus choisi</div>
-          <div class="icon">◆</div>
-          <h3>Shampooing sièges</h3>
-          <ul><li>Intérieur + extérieur</li><li>Shampooing des sièges</li><li>Aspiration complète</li><li>Finition soignée</li></ul>
-          <div class="price-row"><div class="price"><small>Citadine 80€</small>SUV 100€</div><a class="btn-reserver" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20r%C3%A9server%20la%20formule%20Shampooing%20des%20si%C3%A8ges.%20Tarif%20%3A%2080%E2%82%AC%20citadine%20ou%20100%E2%82%AC%20SUV%20%2F%204x4.%20Mon%20v%C3%A9hicule%20est%20%3A">Réserver</a></div>
-        </article>
-        <article class="card featured">
-          <div class="badge">Complet</div>
-          <div class="icon">✦</div>
-          <h3>Formule complète</h3>
-          <ul><li>Intérieur + extérieur</li><li>Shampooing des sièges</li><li>Plafonnier</li><li>Moquette</li></ul>
-          <div class="price-row"><div class="price"><small>Citadine 110€</small>SUV 120€</div><a class="btn-reserver" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20r%C3%A9server%20la%20formule%20compl%C3%A8te.%20Elle%20comprend%20%3A%20int%C3%A9rieur%20%2B%20ext%C3%A9rieur%2C%20shampooing%20des%20si%C3%A8ges%2C%20plafonnier%20et%20moquette.%20Tarif%20%3A%20110%E2%82%AC%20citadine%20ou%20120%E2%82%AC%20SUV%20%2F%204x4.%20Mon%20v%C3%A9hicule%20est%20%3A">Réserver</a></div>
-        </article>
-        <article class="card">
-          <div class="icon">☆</div>
-          <h3>Options</h3>
-          <ul><li>Lustrage carrosserie</li><li>Rénovation optiques</li><li>Traitement céramique</li><li>Désodorisation</li></ul>
-          <div class="price-row"><div class="price"><small>tarif</small>sur devis</div><a class="btn-reserver" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20avoir%20un%20devis%20pour%20une%20option%20%3A%20lustrage%2C%20r%C3%A9novation%20optiques%2C%20traitement%20c%C3%A9ramique%20ou%20d%C3%A9sodorisation.">Réserver</a></div>
-        </article>
+    <section id="prestations">
+      <div class="container">
+        <h2 class="section-title">Nos <span class="accent">formules</span></h2>
+        <p class="section-sub">Des formules adaptées à vos besoins.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">▣</div><h3>Citadine simple</h3>
+            <ul><li>Intérieur + extérieur</li><li>Aspiration</li><li>Nettoyage plastiques</li><li>Vitres</li></ul>
+            <div class="price"><div class="amount">à partir de<br><strong>50€</strong></div><button class="reserve" data-msg="Bonjour O'PTI WASH, je souhaite réserver la formule Citadine simple à 50€ : intérieur + extérieur, aspiration, nettoyage plastiques et vitres.">Réserver</button></div>
+          </article>
+          <article class="card">
+            <div class="icon">🚙</div><h3>SUV / 4x4 simple</h3>
+            <ul><li>Intérieur + extérieur</li><li>Aspiration complète</li><li>Nettoyage plastiques</li><li>Vitres</li></ul>
+            <div class="price"><div class="amount">à partir de<br><strong>60€</strong></div><button class="reserve" data-msg="Bonjour O'PTI WASH, je souhaite réserver la formule SUV / 4x4 simple à 60€ : intérieur + extérieur, aspiration complète, nettoyage plastiques et vitres.">Réserver</button></div>
+          </article>
+          <article class="card hot">
+            <div class="badge">Le plus choisi</div><div class="icon">◆</div><h3>Shampooing sièges</h3>
+            <ul><li>Intérieur + extérieur</li><li>Shampooing des sièges</li><li>Aspiration complète</li><li>Finition soignée</li></ul>
+            <div class="price"><div class="amount">Citadine 80€<br><strong>SUV 100€</strong></div><button class="reserve" data-msg="Bonjour O'PTI WASH, je souhaite réserver la formule Shampooing sièges. Tarif : 80€ citadine ou 100€ SUV. Prestations : intérieur + extérieur, shampooing des sièges, aspiration complète et finition soignée.">Réserver</button></div>
+          </article>
+          <article class="card hot wide">
+            <div class="badge">Complet</div><div class="icon">✦</div><h3>Formule complète</h3>
+            <ul><li>Intérieur + extérieur</li><li>Shampooing des sièges</li><li>Plafonnier</li><li>Moquette</li></ul>
+            <div class="price"><div class="amount">Citadine 110€<br><strong>SUV 120€</strong></div><button class="reserve" data-msg="Bonjour O'PTI WASH, je souhaite réserver la formule complète. Tarif : 110€ citadine ou 120€ SUV. Prestations : intérieur + extérieur, shampooing des sièges, plafonnier et moquette.">Réserver</button></div>
+          </article>
+          <article class="card options">
+            <div class="icon">☆</div><h3>Options</h3>
+            <ul><li>Lustrage carrosserie</li><li>Rénovation optiques</li><li>Traitement céramique</li><li>Désodorisation</li></ul>
+            <div class="price"><div class="amount">tarif<br><strong>sur devis</strong></div><button class="reserve" data-msg="Bonjour O'PTI WASH, je souhaite avoir un devis pour une option : lustrage carrosserie, rénovation optiques, traitement céramique ou désodorisation.">Réserver</button></div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="realisations">
-    <div class="container">
-      <h2 class="section-title">Nos <span class="red">réalisations</span></h2>
-      <p class="section-sub">Découvrez quelques-unes de nos prestations.</p>
-      <div class="gallery">
-        <a href="images/interieur-seat-apres.jpg.jpeg" target="_blank"><img src="images/interieur-seat-apres.jpg.jpeg" alt="Intérieur propre après nettoyage"></a>
-        <a href="images/interieur-seat-avant.jpg.jpeg" target="_blank"><img src="images/interieur-seat-avant.jpg.jpeg" alt="Intérieur avant nettoyage"></a>
-        <a href="images/opel-exterieur-blanc.jpg.jpeg" target="_blank"><img src="images/opel-exterieur-blanc.jpg.jpeg" alt="Voiture blanche propre extérieur"></a>
-        <a href="images/apres-208-face.jpg.jpeg" target="_blank"><img src="images/apres-208-face.jpg.jpeg" alt="Après nettoyage Peugeot"></a>
-        <a href="images/avant-208-face.jpg.jpeg" target="_blank"><img src="images/avant-208-face.jpg.jpeg" alt="Avant nettoyage Peugeot"></a>
+    <section id="realisations">
+      <div class="container">
+        <h2 class="section-title">Nos <span class="accent">réalisations</span></h2>
+        <p class="section-sub">Découvrez quelques-unes de nos prestations.</p>
+        <div class="gallery">
+          <a href="images/interieur-seat-apres.jpg.jpeg" target="_blank"><img src="images/interieur-seat-apres.jpg.jpeg" alt="Intérieur voiture propre"></a>
+          <a href="images/interieur-seat-avant.jpg.jpeg" target="_blank"><img src="images/interieur-seat-avant.jpg.jpeg" alt="Intérieur voiture avant nettoyage"></a>
+          <a href="images/opel-exterieur-blanc.jpg.jpeg" target="_blank"><img src="images/opel-exterieur-blanc.jpg.jpeg" alt="Voiture blanche nettoyée"></a>
+          <a href="images/avant-208-face.jpg.jpeg" target="_blank"><img src="images/avant-208-face.jpg.jpeg" alt="Avant lavage extérieur"></a>
+          <a href="images/apres-208-face.jpg.jpeg" target="_blank"><img src="images/apres-208-face.jpg.jpeg" alt="Après lavage extérieur"></a>
+        </div>
+        <div class="insta-btn"><a class="outline-red" href="https://www.instagram.com/opti.wash" target="_blank" rel="noopener">Voir plus de réalisations</a></div>
       </div>
-      <a class="instagram-btn" target="_blank" href="https://www.instagram.com/opti.wash?igsh=b2FweGo2MDV1MHpu">📷 Voir plus sur Instagram</a>
-    </div>
-  </section>
+    </section>
 
-  <section id="avis">
-    <div class="container">
-      <h2 class="section-title">Avis <span class="red">clients</span></h2>
-      <p class="section-sub">Votre satisfaction est notre priorité.</p>
-      <div class="reviews">
-        <div class="review"><div class="stars">★★★★★</div><p>Travail impeccable ! Ma voiture est comme neuve, je recommande à 100%.</p><b>— wild_971</b></div>
-        <div class="review"><div class="stars">★★★★★</div><p>Ponctuel, sérieux et très professionnel. Résultat au top, merci encore !</p><b>— magkris27</b></div>
-        <div class="review"><div class="stars">★★★★★</div><p>Service au top, voiture propre et brillante. Je referai appel sans hésiter.</p><b>— Samy</b></div>
+    <section id="avis">
+      <div class="container">
+        <h2 class="section-title">Avis <span class="accent">clients</span></h2>
+        <p class="section-sub">Votre satisfaction est notre priorité.</p>
+        <div class="reviews">
+          <div class="review"><div class="stars">★★★★★</div><p>Travail impeccable ! Ma voiture est comme neuve, je recommande à 100%.</p><strong>— Ludo_971</strong></div>
+          <div class="review"><div class="stars">★★★★★</div><p>Ponctuel, sérieux et très professionnel. Résultat au top, merci beaucoup !</p><strong>— Cindy972</strong></div>
+          <div class="review"><div class="stars">★★★★★</div><p>Service de qualité, l’odeur propre est incroyable. Je reviendrai sans hésiter.</p><strong>— Tommy</strong></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="contact">
+  <footer id="contact">
     <div class="container">
-      <div class="contact-box">
-        <div class="logo"><span class="logo-mark"><span>O P'TI WASH</span></span></div>
-        <a class="contact-item" target="_blank" href="https://wa.me/590690267233?text=Bonjour%20O%27Pti%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous."><div class="contact-icon">☎</div><div>WhatsApp<span>Réponse rapide</span></div></a>
-        <a class="contact-item" href="tel:+590690267233"><div class="contact-icon">📞</div><div>06 90 26 72 33<span>Appel direct</span></div></a>
-        <a class="contact-item" target="_blank" href="https://www.instagram.com/opti.wash?igsh=b2FweGo2MDV1MHpu"><div class="contact-icon">◎</div><div>Instagram<span>Suivez nos réalisations</span></div></a>
+      <div class="foot">
+        <img class="foot-logo" src="images/logo-optiwash.png" alt="O’PTI WASH">
+        <a class="foot-item" href="https://wa.me/590690267233" target="_blank" rel="noopener"><span class="foot-ico">☎</span><span><strong>WhatsApp</strong><br><small>+590 690 26 72 33</small></span></a>
+        <a class="foot-item" href="tel:+590690267233"><span class="foot-ico">📞</span><span><strong>+590 690 26 72 33</strong><br><small>Appel direct</small></span></a>
+        <a class="foot-item" href="https://www.instagram.com/opti.wash" target="_blank" rel="noopener"><span class="foot-ico">📷</span><span><strong>Instagram</strong><br><small>@opti.wash</small></span></a>
       </div>
+      <p class="copy">© 2025 O’PTI WASH – Tous droits réservés.</p>
     </div>
-  </section>
-</main>
-<footer>© 2025 O P'TI WASH — Tous droits réservés</footer>
+  </footer>
 
-<script>
-const mobileToggle=document.getElementById('mobileToggle');
-const menu=document.getElementById('menu');
-mobileToggle.addEventListener('click',()=>menu.classList.toggle('open'));
-document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-</script>
+  <script>
+    const phone = '590690267233';
+    document.querySelectorAll('.reserve').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const text = encodeURIComponent(btn.dataset.msg || "Bonjour O'PTI WASH, je souhaite réserver un lavage auto.");
+        window.open(`https://wa.me/${phone}?text=${text}`,'_blank');
+      });
+    });
+  </script>
 </body>
 </html>
